@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Harmless Test Virus</title>
+</head>
+<body>
+  <h1>Download Harmless Test File</h1>
+  <p>This file will show a message and delete itself.</p>
+  <button onclick="downloadFile()">Download</button>
+
+  <script>
+    function downloadFile() {
+      const link = document.createElement('a');
+      link.href = 'test_virus.exe'; // Same folder as HTML
+      link.download = 'test_virus.exe';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
